@@ -1,0 +1,73 @@
+########################################################################################
+# Configuration File for Appx-DB Modification Script                                   #
+# ==================================================                                   #
+# The Appx-Database ("StateRepository-Machine.srd") of Windows 10 contains Information #
+# about installed Appx-Packages and controls their Distribution to the Users.  Some of #
+# the preinstalled System-Apps like "MicrosoftStore" or the "Content Delivery Manager" #
+# being responsible for lot of Ads, Telemetry and self-installing Store-Apps cannot be #
+# uninstalled via Modern Settings Dialog or PowerShell. This is because these Packages #
+# are protected from Uninstallation by a special Flag ("IsInbox") within the "Package" #
+# Table of the Appx-Database. This Table lists all installed Appx-Packages. The Column #
+# named "IsInbox" defines the Protection State for each Package by containing either a #
+# Value of 1 which means the Package is a "Part Of The Box" and therefore it cannot be #
+# uninstalled or a Value of 0 meaning that the Appx-Package can be uninstalled for all #
+# Users.
+# By Modifying the IsInbox-Value of an Appx-Package to 0 the Protection of the Package #
+# will be diabled and it can be uninstalled by Settings Dialog or PowerShell.          #
+# This File defines how the Protection State of the listed Packages is modified by the #
+# Script. It's sufficient to only specify a Part of the Package Name. Thereby the File #
+# will stay compatible among further Version Builds of Windows 10.                     #
+########################################################################################
+
+# Modern UI Dialog-App for entering Japanese Characters
+InputApp=0
+
+# Credential Handler for Microsoft Azure Logon
+Microsoft.AAD.BrokerPlugin=0
+
+# Modern UI Dialog-App for Eye-Movement Control
+Microsoft.ECApp=0
+
+# Container-App for Apps and Messages on the Lockscreen
+Microsoft.LockApp=0
+
+# App to project the Screen to a Wireless Display
+Microsoft.PPIProjection=0
+
+# Windows Defender SmartScreen Functionality for Modern Apps
+Microsoft.Windows.Apprep.ChxApp=0
+
+# Windows Kiosk Mode
+Microsoft.Windows.AssignedAccessLockApp=0
+
+# This App is responsible for silent Installation of suggested Apps,
+# automatic App-Updates, Ads and the Collection of Telemetry Data
+Microsoft.Windows.ContentDeliveryManager=0
+
+# QuickStart Guide showing the basics of using Narrator Feature
+Microsoft.Windows.NarratorQuickStart=0
+
+# Support for Captive Network Portals during OOBE-Phase of Windows
+Microsoft.Windows.OOBENetworkCaptivePortal=0
+Microsoft.Windows.OOBENetworkConnectionFlow=0
+
+# Parental Control Features
+Microsoft.Windows.ParentalControls=0
+
+# Integration of Contacts into the Taskbar and Start Menu
+Microsoft.Windows.PeopleExperienceHost=0
+
+# App for Management of Security Providers in Windows Defender
+Microsoft.Windows.SecHealthUI=0
+
+# Special Windows-Mode for Exams
+Microsoft.Windows.SecureAssessmentBrowser=0
+
+# Modern UI Dialog-App for save Removal of external GPUs
+Microsoft.Windows.XGpuEjectDialog=0
+
+# App for Integration of Xbox-Features into Windows
+Microsoft.XboxGameCallableUI=0
+
+# Camera Barcode Scanner App
+Windows.CBSPreview=0
